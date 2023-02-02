@@ -77,9 +77,16 @@ namespace OOP3
                             Console.WriteLine("Moi ban nhap Ten cua sinh vien muon tim: ");
                             string name = Console.ReadLine();
                             var search = qualy.SearchStudent(name);
-                            foreach (var t in search)
+                            if (search != null)
                             {
-                                Console.WriteLine(t.ToString());
+                                foreach (var t in search)
+                                {
+                                    Console.WriteLine(t.ToString());
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Khong ton tai sinh vien nay");
                             }
                             break;
                         }

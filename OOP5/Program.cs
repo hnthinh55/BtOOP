@@ -84,6 +84,7 @@ namespace OOP5
                             Console.WriteLine("Moi ban nhap ma khach hang: ");
                             string id = Console.ReadLine();
                             Console.WriteLine("Tien thua cua khach la: "+hotel.RentPrice(id));
+                            Console.WriteLine();
                             break;
                         }
                     case 4:

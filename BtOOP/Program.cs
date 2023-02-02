@@ -83,10 +83,15 @@ namespace OOP1
                             Console.WriteLine("Moi ban nhap Ten cua nhan vien muon tim: ");
                             string name = Console.ReadLine();
                             var search = manage.Search(name);
-                            foreach (var t in search)
+                            if (search != null)
                             {
-                                Console.WriteLine(t.ToString());
+                                foreach (var t in search)
+                                {
+                                    Console.WriteLine(t.ToString());
+                                }
                             }
+                            else
+                                Console.WriteLine("Khong tim thay nhan vien");
                             break;
                         }
                     case 3:
