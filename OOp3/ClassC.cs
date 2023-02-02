@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace OOp3
+namespace OOP3
 {
     internal class ClassC: Student
     {
@@ -18,11 +18,7 @@ namespace OOp3
         }
         public override String ToString()
         {
-            return $"**Khoi C:\nID: {Id} \n" +
-            $" Ten hoc sinh : {Name}\n" +
-                 $" Dia chi: {Address}\n" +
-                  $" Muc uu tien: {Priority} \n"
-                + $"Mon thi: {Literature}, {History}, {Geography}";
+            return $"**Khoi A:\nID: {id} \n Ten hoc sinh : {name}\n Dia chi: {address}\n Muc uu tien: {priority} \n Mon thi: {Literature}, {History}, {Geography}";
         }
     }
 }

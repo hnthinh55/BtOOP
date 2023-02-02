@@ -48,9 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HoGiaDinh.cs" />
-    <Compile Include="KhuPho.cs" />
-    <Compile Include="Nguoi.cs" />
+    <Compile Include="Family.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

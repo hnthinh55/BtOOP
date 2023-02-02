@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp2
+namespace OOP2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            QuanLySach qualy = new QuanLySach();
+            ManageDocument manage = new ManageDocument();
             while (true)
             {
                 Console.WriteLine("Wellcome to Excercise 1");
@@ -37,37 +37,37 @@ namespace OOp2
                                 Console.WriteLine("Nhap ID: ");
                                 string id = Console.ReadLine();
                                 Console.WriteLine("Nhap nha xuat ban: ");
-                                string nxb = Console.ReadLine();
+                                string publisher = Console.ReadLine();
                                 Console.WriteLine("Nhap so Ban xuat ban: ");
-                                int soBanXB = Convert.ToInt32(Console.ReadLine());
+                                int numberPublish = Convert.ToInt32(Console.ReadLine());
                                 switch (chon)
                                 {
                                     case "a":
                                         {
                                             Console.WriteLine("Nhap so tac gia: ");
-                                            string TacGia = Console.ReadLine();
+                                            string author = Console.ReadLine();
                                             Console.WriteLine("Nhap so trang: ");
-                                            int thangPH = Convert.ToInt32(Console.ReadLine());
-                                            ManageDocument document = new Book(id, nxb, soBanXB, TacGia, thangPH);
-                                            qualy.ThemMoi(document);
+                                            int numberPage = Convert.ToInt32(Console.ReadLine());
+                                            Document document = new Book(id, publisher, numberPublish, author, numberPage);
+                                            manage.AddDocument(document);
                                             break;
                                         }
                                     case "b":
                                         {
                                             Console.WriteLine("Nhap So Phat Hanh: ");
-                                            int SoPhatHanh = Convert.ToInt32(Console.ReadLine());
+                                            int issueNo = Convert.ToInt32(Console.ReadLine());
                                             Console.WriteLine("Nhap  Thang Phat Hanh: ");
-                                            int ThangPhatHanh = Convert.ToInt32(Console.ReadLine());
-                                            ManageDocument document = new magazine(id, nxb, soBanXB, SoPhatHanh, ThangPhatHanh);
-                                            qualy.ThemMoi(document);
+                                            int releaseMonth = Convert.ToInt32(Console.ReadLine());
+                                            Document document = new Magazine(id, publisher, numberPublish, issueNo, releaseMonth);
+                                            manage.AddDocument(document);
                                             break;
                                         }
                                     case "c":
                                         {
                                             Console.WriteLine("Nhap so ngay xuat ban: ");
-                                            string ngayxb = Console.ReadLine();
-                                            ManageDocument document = new Newspaper(id, nxb, soBanXB, ngayxb);
-                                            qualy.ThemMoi(document);
+                                            string releaseDate = Console.ReadLine();
+                                            Document document = new Newspaper(id, publisher, numberPublish, releaseDate);
+                                            manage.AddDocument(document);
                                             break;
                                         }
                                     default:
@@ -84,7 +84,7 @@ namespace OOp2
                         {
                             Console.WriteLine("Moi ban nhap ma Id cua tai lieu can xoa: ");
                             string ten = Console.ReadLine();
-                            var check = qualy.Xoa(ten);
+                            var check = manage.RemoveDocument(ten);
                             if(check == true)
                             {
                                 Console.WriteLine("xoa thanh cong");
@@ -102,23 +102,22 @@ namespace OOp2
                             Console.WriteLine("2: tap chi");
                             Console.WriteLine("3: bao");
                             int ten = Convert.ToInt16(Console.ReadLine());
-                            List<ManageDocument> manage;
                             switch (ten)
                             {
                                 case 1:
                                     {
-                                        qualy.TimKiem("Sach");
+                                        manage.SearchDocument("Sach");
                                         break;
                                         
                                     }
                                 case 2:
                                     {
-                                        qualy.TimKiem("TapChi");
+                                        manage.SearchDocument("TapChi");
                                         break;
                                     }
                                 case 3:
                                     {
-                                        qualy.TimKiem("Bao");
+                                        manage.SearchDocument("Bao");
                                         break;
                                     }
                                 default:
@@ -132,12 +131,12 @@ namespace OOp2
                     case 4:
                         {
                             Console.WriteLine("Danh sach nhan vien : ");
-                            qualy.HienThi();
+                            manage.ShowList();
                             break;
                         }
                     case 5:
                         {
-                            qualy.EXIT();
+                            manage.EXIT();
                             break;
                         }
                 }

@@ -8,27 +8,23 @@ namespace OOP5
 {
     internal class Customer
     {
-        public string Hoten { get; set; }
-        public int Tuoi { get; set; }
-        public string IdentifyCard { get; set; }
-        public Room room { get; set; }
-        public int SoNgayThue { get; set; }
+        public string fullname { get; private set; }
+        public int age { get; private set; }
+        public string identifyCard { get; private set; }
+        public Room room { get; private set; }
+        public int numberRent { get; private set; }
         public Customer() { }
-        public Customer(string hoten, int tuoi, string indentifyCard, int soNgayThue, Room _room)
+        public Customer(string fullname, int age, string identifyCard, int numberRent, Room _room)
         {
-            Hoten = hoten;
-            Tuoi = tuoi;
-            IdentifyCard = indentifyCard;
-            SoNgayThue = soNgayThue;
+            this.fullname = fullname;
+            this.age = age;
+            this.identifyCard = identifyCard;
+            this.numberRent = numberRent;
             room = _room;
         }
         public override String ToString()
         {
-            return $"Khach hang: {Hoten}\n" +
-                $"Tuoi: {Tuoi}\n" +
-                $"IdentifyCard: {IdentifyCard}\n" +
-                $"Phong: {room.ToString()}\n" +
-                $"So Ngay Thue:{SoNgayThue}\n";
+            return $"Khach hang: {fullname}\n Tuoi: {age}\n IdentifyCard: {identifyCard}\n Phong: {room.ToString()}\n So Ngay Thue:{numberRent}\n";
         }
     }
 }

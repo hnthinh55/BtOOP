@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp3
+namespace OOP3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            TuyenSinh qualy = new TuyenSinh();
+            ManageStudent qualy = new ManageStudent();
             while (true)
             {
                 Console.WriteLine("Wellcome to Excercise 3");
@@ -46,19 +46,19 @@ namespace OOp3
                                     case "a":
                                         {
                                             Student cb = new ClassA(id, name, address, prio);
-                                            qualy.ThemMoi(cb);
+                                            qualy.AddStudent(cb);
                                             break;
                                         }
                                     case "b":
                                         {
                                             Student cb = new ClassB(id, name, address, prio);
-                                            qualy.ThemMoi(cb);
+                                            qualy.AddStudent(cb);
                                             break;
                                         }
                                     case "c":
                                         {
                                             Student cb = new ClassC(id, name, address, prio);
-                                            qualy.ThemMoi(cb);
+                                            qualy.AddStudent(cb);
                                             break;
                                         }
                                     default:
@@ -75,8 +75,8 @@ namespace OOp3
                     case 2:
                         {
                             Console.WriteLine("Moi ban nhap Ten cua sinh vien muon tim: ");
-                            string ten = Console.ReadLine();
-                            var search = qualy.TimKiem(ten);
+                            string name = Console.ReadLine();
+                            var search = qualy.SearchStudent(name);
                             foreach (var t in search)
                             {
                                 Console.WriteLine(t.ToString());
@@ -86,7 +86,7 @@ namespace OOp3
                     case 3:
                         {
                             Console.WriteLine("Danh sach Sinh vien : ");
-                            qualy.HienThi();
+                            qualy.Show();
                             break;
                         }
                     case 4:

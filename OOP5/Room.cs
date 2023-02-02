@@ -8,18 +8,17 @@ namespace OOP5
 {
     internal class Room
     {
-        public string LoaiPhong { get; set; }
-        public double Gia { get; set; } 
-        public Room(string loaiPhong, double gia)
+        public string category { get; set; }
+        public double price { get; set; } 
+        public Room(string category, double price)
         {
-            LoaiPhong = loaiPhong;
-            Gia = gia;
+            this.category = category;
+            this.price = price;
         }
         public Room() { }
         public override string ToString()
         {
-            return $"Phong: {LoaiPhong}" +
-                $", Gia: {Gia}";
+            return $"Phong: {category}, Gia: {price}";
         }
     }
 }

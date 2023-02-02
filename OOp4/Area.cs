@@ -5,21 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp4
+namespace OOP4
 {
-    internal class KhuPho : IEnumerable<HoGiaDinh>
+    internal class Area : IEnumerable<Family>
     {
-        public List<HoGiaDinh> hogiadinhs;
-        public KhuPho() {
-            hogiadinhs = new List<HoGiaDinh>();
+        public List<Family> hogiadinhs;
+        public Area() {
+            hogiadinhs = new List<Family>();
         }
 
-        public IEnumerator<HoGiaDinh> GetEnumerator()
+        public IEnumerator<Family> GetEnumerator()
         {
-            return ((IEnumerable<HoGiaDinh>)hogiadinhs).GetEnumerator();
+            return ((IEnumerable<Family>)hogiadinhs).GetEnumerator();
         }
 
-        public void ThemHoGiaDinh(HoGiaDinh hoGiaDinh)
+        public void addFamily(Family hoGiaDinh)
         {
             hogiadinhs.Add(hoGiaDinh);
         }

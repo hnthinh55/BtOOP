@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp3
+namespace OOP3
 {
-    internal class TuyenSinh
+    internal class ManageStudent
     {
         private IList<Student> students;
-        public TuyenSinh()
+        public ManageStudent()
         {
             students = new List<Student>();
         }
-        public void ThemMoi(Student manage)
+        public void AddStudent(Student manage)
         {
             students.Add(manage);
         }
-        public List<Student> TimKiem(string tensearch)
+        public List<Student> SearchStudent(string id)
         {
             return (from list in students
-                        where list.Id == tensearch
+                        where list.id == id
                         select list).ToList();
         }
-        public void HienThi()
+        public void Show()
         {
             foreach (var item in students)
             {

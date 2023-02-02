@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BtOOP
+namespace OOP1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            QLCB qualy = new QLCB();
+            ManagerOfficer manage = new ManagerOfficer();
             while (true)
             {
                 Console.WriteLine("Wellcome to Excercise 1");
@@ -38,33 +38,33 @@ namespace BtOOP
                                 Console.WriteLine("Nhap Tuoi: ");
                                 int age = Convert.ToInt16(Console.ReadLine());
                                 Console.WriteLine("Nhap GioiTinh: ");
-                                string gioitinh = Console.ReadLine();
+                                string gender = Console.ReadLine();
                                 Console.WriteLine("Nhap DiaChi: ");
-                                string DiaChi = Console.ReadLine();
+                                string address = Console.ReadLine();
                                 switch (chon)
                                 {
                                     case "a":
                                         {
                                             Console.WriteLine("Nhap Nganh: ");
-                                            string Nganh = Console.ReadLine();
-                                            CanBo cb = new Nhanvien(name, age, gioitinh, DiaChi, Nganh);
-                                            qualy.ThemMoi(cb);
+                                            string major = Console.ReadLine();
+                                            Officer cb = new Engineer(name, age, gender, address, major);
+                                            manage.Add(cb);
                                             break;
                                         }
                                     case "b":
                                         {
                                             Console.WriteLine("Nhap Bac: ");
-                                            string bac = Console.ReadLine();
-                                            CanBo cb = new Nhanvien(name, age, gioitinh, DiaChi, bac);
-                                            qualy.ThemMoi(cb);
+                                            int rank = Convert.ToInt16(Console.ReadLine());
+                                            Officer cb = new Worker(name, age, gender, address, rank);
+                                            manage.Add(cb);
                                             break;
                                         }
                                     case "c":
                                         {
                                             Console.WriteLine("Nhap cong viec: ");
-                                            string CongViec = Console.ReadLine();
-                                            CanBo cb = new Nhanvien(name, age, gioitinh, DiaChi, CongViec);
-                                            qualy.ThemMoi(cb);
+                                            string task = Console.ReadLine();
+                                            Officer cb = new Staff(name, age, gender, address, task);
+                                            manage.Add(cb);
                                             break;
                                         }
                                     default:
@@ -81,8 +81,8 @@ namespace BtOOP
                     case 2:
                         {
                             Console.WriteLine("Moi ban nhap Ten cua nhan vien muon tim: ");
-                            string ten = Console.ReadLine();
-                            var search = qualy.TimKiem(ten);
+                            string name = Console.ReadLine();
+                            var search = manage.Search(name);
                             foreach (var t in search)
                             {
                                 Console.WriteLine(t.ToString());
@@ -92,12 +92,12 @@ namespace BtOOP
                     case 3:
                         {
                             Console.WriteLine("Danh sach nhan vien : ");
-                            qualy.HienThi();
+                            manage.Show();
                             break;
                         }
                     case 4:
                         {
-                            qualy.EXIT();
+                            manage.EXIT();
                             break;
                         }
                 }

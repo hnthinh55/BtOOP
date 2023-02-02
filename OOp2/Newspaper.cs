@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp2
+namespace OOP2
 {
-    class Newspaper : ManageDocument
+    class Newspaper : Document
     {
-        private string NgayXB { get; set; }
-        public Newspaper(string iD, string nxB, int So, string ngayXB) : base(iD, nxB, So)
+        public string releaseDate { get; private set; }
+        public Newspaper(string iD, string nxB, int So, string releaseDate) : base(iD, nxB, So)
         {
-            NgayXB = ngayXB;
+            this.releaseDate = releaseDate;
         }
         public override String ToString()
         {
-            return $"**ID: {ID} " +
-                $" Nha xuat Ban: {NXB}" +
-                 $" So ban xuat ban: {SoBanXB}" +
-                  $" Ngay xuat ban: {NgayXB}"; 
+            return $"**ID: {ID} \n Nha xuat Ban: {publisher}\n So ban xuat ban: {numberPublish}\n Ngay xuat ban: {releaseDate}"; 
         }
     }
 }

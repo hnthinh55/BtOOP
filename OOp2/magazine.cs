@@ -4,24 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp2
+namespace OOP2
 {
-    class magazine : ManageDocument
+    class Magazine : Document
     {
-        private int SoPhatHanh { get; set; }
-        private int ThangPhatHanh { get; set; }
-        public magazine(string iD, string nxB, int So, int soPhatHanh, int thangPH) : base(iD, nxB, So)
+        public int issueNo { get;private set; }
+        public int releaseMonth { get; private set; }
+        public Magazine(string iD, string nxB, int So, int issueNo, int releaseMonth) : base(iD, nxB, So)
         {
-            SoPhatHanh = soPhatHanh;
-            ThangPhatHanh = thangPH;
+            this.issueNo = issueNo;
+            this.releaseMonth = releaseMonth;
         }
         public override String ToString()
         {
-            return $"**ID: {ID} " +
-                $" Nha xuat Ban: {NXB}" +
-                 $" So ban xuat ban: {SoBanXB}" +
-                  $" so phat hanh: {SoPhatHanh}" +
-                   $" thang phat hanh: {ThangPhatHanh}";
+            return $"**ID: {ID} \n Nha xuat Ban: {publisher} \n So ban xuat ban: {numberPublish}\n so phat hanh: {issueNo}\n thang phat hanh: {releaseMonth}";
         }
     }
 }

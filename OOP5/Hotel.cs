@@ -6,42 +6,42 @@ using System.Threading.Tasks;
 
 namespace OOP5
 {
-    internal class KhachSan
+    internal class Hotel
     {
-        private IList<Customer> khachThues;
-        public KhachSan() {
-            khachThues = new List<Customer>();
+        private IList<Customer> customers;
+        public Hotel() {
+            customers = new List<Customer>();
         }
-        public void Add(Customer nguoi)
+        public void Add(Customer customer)
         {
-            khachThues.Add(nguoi);
+            customers.Add(customer);
         }
         public bool Remove(string id)
         {
-            var check = from list in khachThues
-                        where list.IdentifyCard == id
+            var check = from list in customers
+                        where list.identifyCard == id
                         select list;
             if (check.Count() > 0)
             {
-                khachThues.Remove((from list in khachThues
-                                  where list.IdentifyCard == id
+                customers.Remove((from list in customers
+                                  where list.identifyCard == id
                                    select list).FirstOrDefault());
                 return true;
             }
             return false;
         }
         public double RentPrice(string id) {
-            var nguoiThue = khachThues.Where(khach => khach.IdentifyCard == id).FirstOrDefault();
+            var nguoiThue = customers.Where(khach => khach.identifyCard == id).FirstOrDefault();
             if(nguoiThue==null )
             {
                 Console.WriteLine("Khong ton tai nguoi nay");
                 return 0;
             }
-            return nguoiThue.room.Gia * nguoiThue.SoNgayThue;
+            return nguoiThue.room.price * nguoiThue.numberRent;
         }
         public void Ouput() {
             Console.WriteLine("**Danh sach khach thue tai khach san: ");
-           foreach (var khach in khachThues)
+           foreach (var khach in customers)
             {
                 Console.WriteLine(khach.ToString());
             }

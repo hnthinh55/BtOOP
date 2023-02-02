@@ -10,7 +10,7 @@ namespace OOP5
     {
         static void Main(string[] args)
         {
-            KhachSan qualy = new KhachSan();
+            Hotel hotel = new Hotel();
             while (true)
             {
                 Console.WriteLine("Wellcome to Excercise 5");
@@ -46,15 +46,15 @@ namespace OOP5
                                 };
                             if (chon.ToLower() == "a")
                             {
-                                qualy.Add(new Customer(name, age, iden, num, tmp[0]));
+                                hotel.Add(new Customer(name, age, iden, num, tmp[0]));
                             }
                             else if (chon.ToLower() == "b")
                             {
-                                qualy.Add(new Customer(name, age, iden, num, tmp[1]));
+                                hotel.Add(new Customer(name, age, iden, num, tmp[1]));
                             }
                             else if (chon.ToLower() == "c")
                             {
-                                qualy.Add(new Customer(name, age, iden, num, tmp[2]));
+                                hotel.Add(new Customer(name, age, iden, num, tmp[2]));
                             }
                             else
                             {
@@ -68,7 +68,7 @@ namespace OOP5
                         {
                             Console.WriteLine("Moi ban nhap ma khach hang: ");
                             string id = Console.ReadLine();
-                            var search = qualy.Remove(id);
+                            var search = hotel.Remove(id);
                             if(search== true)
                             {
                                 Console.WriteLine("xoa thanh cong");
@@ -83,17 +83,17 @@ namespace OOP5
                         {
                             Console.WriteLine("Moi ban nhap ma khach hang: ");
                             string id = Console.ReadLine();
-                            Console.WriteLine("Tien thua cua khach la: "+qualy.RentPrice(id));
+                            Console.WriteLine("Tien thua cua khach la: "+hotel.RentPrice(id));
                             break;
                         }
                     case 4:
                         {
-                            qualy.Ouput();
+                            hotel.Ouput();
                             break;
                         }
                     case 5:
                         {
-                            qualy.EXIT();
+                            hotel.EXIT();
                             break;
                         }
                 }

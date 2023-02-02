@@ -46,10 +46,10 @@
     <Compile Include="Newspaper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ManageDocument.cs" />
+    <Compile Include="Document.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="magazine.cs" />
-    <Compile Include="QuanLySach.cs" />
+    <Compile Include="Magazine.cs" />
+    <Compile Include="ManageDocument.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

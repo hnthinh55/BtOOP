@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOp2
+namespace OOP2
 {
-    class Book: ManageDocument
+    class Book: Document
     {
-        private string TacGia { get; set; }
-        private int SoTrang { get; set; }
-        public Book(string iD, string nxB, int So, string tacGia,int soTrang) : base(iD, nxB, So)
+        public string author { get; private set; }
+        public int numberPage { get; private set; }
+        public Book(string iD, string nxB, int So, string author,int numberPage) : base(iD, nxB, So)
         {
-            TacGia= tacGia;
-            SoTrang = soTrang;
+            this.author= author;
+            this.numberPage = numberPage;
         }
         //public override void Input()
         //{
@@ -30,11 +30,7 @@ namespace OOp2
         //}
         public override String ToString()
         {
-            return $"**ID: {ID} " +
-                $" Nha xuat Ban: {NXB}" +
-                 $" So ban xuat ban: {SoBanXB}" +
-                  $" Tac gia: {TacGia}" +
-                   $" thang phat hanh: {SoTrang}";
+            return $"**ID: {ID} \n Nha xuat Ban: {publisher} \n So ban xuat ban: {numberPublish}\n Tac gia: {author}\n thang phat hanh: {numberPage}";
         }
     }
 }
