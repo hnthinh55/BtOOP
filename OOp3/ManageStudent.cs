@@ -20,7 +20,7 @@ namespace OOP3
         public List<Student> SearchStudent(string id)
         {
             return (from list in students
-                        where list.id == id
+                        where list.Id == id
                         select list).ToList();
         }
         public void Show()
@@ -30,7 +30,7 @@ namespace OOP3
                 Console.WriteLine(item.ToString());
             }
         }
-        public void EXIT()
+        public void LogOut()
         {
             Environment.Exit(0);
         }

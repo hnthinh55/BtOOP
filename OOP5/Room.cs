@@ -8,17 +8,17 @@ namespace OOP5
 {
     internal class Room
     {
-        public string category { get; set; }
-        public double price { get; set; } 
+        public string Category { get; set; }
+        public double Price { get; set; } 
         public Room(string category, double price)
         {
-            this.category = category;
-            this.price = price;
+            this.Category = category;
+            this.Price = price;
         }
         public Room() { }
         public override string ToString()
         {
-            return $"Phong: {category}, Gia: {price}";
+            return $"Phong: {Category}, Gia: {Price}";
         }
     }
 }

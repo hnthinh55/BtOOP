@@ -10,7 +10,7 @@ namespace OOP3
     {
         static void Main(string[] args)
         {
-            ManageStudent qualy = new ManageStudent();
+            ManageStudent manage = new ManageStudent();
             while (true)
             {
                 Console.WriteLine("Wellcome to Excercise 3");
@@ -46,19 +46,19 @@ namespace OOP3
                                     case "a":
                                         {
                                             Student cb = new ClassA(id, name, address, prio);
-                                            qualy.AddStudent(cb);
+                                            manage.AddStudent(cb);
                                             break;
                                         }
                                     case "b":
                                         {
                                             Student cb = new ClassB(id, name, address, prio);
-                                            qualy.AddStudent(cb);
+                                            manage.AddStudent(cb);
                                             break;
                                         }
                                     case "c":
                                         {
                                             Student cb = new ClassC(id, name, address, prio);
-                                            qualy.AddStudent(cb);
+                                            manage.AddStudent(cb);
                                             break;
                                         }
                                     default:
@@ -76,7 +76,7 @@ namespace OOP3
                         {
                             Console.WriteLine("Moi ban nhap Ten cua sinh vien muon tim: ");
                             string name = Console.ReadLine();
-                            var search = qualy.SearchStudent(name);
+                            var search = manage.SearchStudent(name);
                             if (search != null)
                             {
                                 foreach (var t in search)
@@ -93,12 +93,12 @@ namespace OOP3
                     case 3:
                         {
                             Console.WriteLine("Danh sach Sinh vien : ");
-                            qualy.Show();
+                            manage.Show();
                             break;
                         }
                     case 4:
                         {
-                            qualy.EXIT();
+                            manage.LogOut();
                             break;
                         }
                 }

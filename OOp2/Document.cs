@@ -9,13 +9,13 @@ namespace OOP2
     internal class Document
     {
         public string ID { get; set; }
-        public string publisher { get; set; }
-        public int numberPublish { get; set; }
+        public string Publisher { get; set; }
+        public int NumberPublish { get; set; }
         public Document(string iD, string publisher, int numberPublish)
         {
             ID = iD;
-            this.publisher = publisher;
-            this.numberPublish = numberPublish;
+            this.Publisher = publisher;
+            this.NumberPublish = numberPublish;
         }
         public Document() { }
     }

@@ -16,7 +16,7 @@ namespace OOP3
         }
         public override String ToString()
         {
-            return $"**Khoi A:\nID: {id} \n Ten hoc sinh : {name}\n Dia chi: {address}\n Muc uu tien: {priority} \n Mon thi: {Math}, {Biology}, {Chemistry}";
+            return $"**Khoi A:\nID: {Id} \n Ten hoc sinh : {Name}\n Dia chi: {Address}\n Muc uu tien: {Priority} \n Mon thi: {Math}, {Biology}, {Chemistry}";
         }
     }
 }

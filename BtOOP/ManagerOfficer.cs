@@ -8,13 +8,13 @@ namespace OOP1
 {
     internal class ManagerOfficer
     {
-        private IList<Officer> officers;
+        private IList<Officer> _officers;
         public ManagerOfficer() {
-            officers= new List<Officer>();
+            _officers= new List<Officer>();
         }
         public void Add (Officer officer)
         {
-            officers.Add(officer);
+            _officers.Add(officer);
         }
         public List<Officer> Search (string name)
         {
@@ -22,19 +22,19 @@ namespace OOP1
             {
                 return null;
             }
-            return (from list in officers
-                    where list.fullname.Contains(name)
+            return (from list in _officers
+                    where list.FullName.Contains(name)
 
                     select list).ToList(); 
         }
         public void Show()
         {
-            foreach (var item in officers)
+            foreach (var item in _officers)
             {
                 Console.WriteLine(item.ToString());
             }
         }
-        public void EXIT()
+        public void LogOut()
         {
             Environment.Exit(0);
         }

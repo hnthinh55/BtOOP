@@ -94,7 +94,7 @@ namespace OOP5
                         }
                     case 5:
                         {
-                            hotel.EXIT();
+                            hotel.LogOut();
                             break;
                         }
                 }

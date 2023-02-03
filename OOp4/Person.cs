@@ -8,21 +8,21 @@ namespace OOP4
 {
     internal class Person
     {
-        public string fullname { get; private set; }
-        public int age { get; private set; }
-        public string job { get; private set; }
-        public string identifyCard { get; private set; }
+        public string Fullname { get; private set; }
+        public int Age { get; private set; }
+        public string Job { get; private set; }
+        public string IdentifyCard { get; private set; }
         public Person() { }
         public Person(string fullname, int age, string job, string identifyCard)
         {
-            this.fullname = fullname;
-            this.age = age;
-            this.job = job;
-            this.identifyCard = identifyCard;
+            this.Fullname = fullname;
+            this.Age = age;
+            this.Job = job;
+            this.IdentifyCard = identifyCard;
         }
         public override string ToString()
         {
-            return $" Hoten: {fullname}\n Tuoi: {age}\n Nghe nghiep: {job}\n IdentifyCard: {identifyCard}";
+            return $" Hoten: {Fullname}\n Tuoi: {Age}\n Nghe nghiep: {Job}\n IdentifyCard: {IdentifyCard}";
         }
     }
 }

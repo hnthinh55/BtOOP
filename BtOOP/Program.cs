@@ -102,7 +102,7 @@ namespace OOP1
                         }
                     case 4:
                         {
-                            manage.EXIT();
+                            manage.LogOut();
                             break;
                         }
                 }

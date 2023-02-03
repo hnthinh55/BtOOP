@@ -32,7 +32,7 @@ namespace OOP4
                     string identifyCard = Guid.NewGuid().ToString();
                     persons.Add(new Person (name, age, job, identifyCard));
                 }
-                area.addFamily(new Family(persons, address));
+                area.AddFamily(new Family(persons, address));
             }
             foreach (var element in area)
             {

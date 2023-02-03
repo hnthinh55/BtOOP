@@ -8,45 +8,45 @@ namespace OOP5
 {
     internal class Hotel
     {
-        private IList<Customer> customers;
+        private IList<Customer> _customers;
         public Hotel() {
-            customers = new List<Customer>();
+            _customers = new List<Customer>();
         }
         public void Add(Customer customer)
         {
-            customers.Add(customer);
+            _customers.Add(customer);
         }
         public bool Remove(string id)
         {
-            var check = from list in customers
-                        where list.identifyCard == id
+            var check = from list in _customers
+                        where list.IdentifyCard == id
                         select list;
             if (check.Count() > 0)
             {
-                customers.Remove((from list in customers
-                                  where list.identifyCard == id
+                _customers.Remove((from list in _customers
+                                  where list.IdentifyCard == id
                                    select list).FirstOrDefault());
                 return true;
             }
             return false;
         }
         public double RentPrice(string id) {
-            var nguoiThue = customers.Where(khach => khach.identifyCard == id).FirstOrDefault();
+            var nguoiThue = _customers.Where(khach => khach.IdentifyCard == id).FirstOrDefault();
             if(nguoiThue==null )
             {
                 Console.WriteLine("Khong ton tai nguoi nay");
                 return 0;
             }
-            return nguoiThue.room.price * nguoiThue.numberRent;
+            return nguoiThue.Room.Price * nguoiThue.NumberRent;
         }
         public void Ouput() {
             Console.WriteLine("**Danh sach khach thue tai khach san: ");
-           foreach (var khach in customers)
+           foreach (var khach in _customers)
             {
                 Console.WriteLine(khach.ToString());
             }
         }
-        public void EXIT ()
+        public void LogOut ()
         {
             Environment.Exit(0);
         }

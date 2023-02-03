@@ -8,12 +8,12 @@ namespace OOP2
 {
     class Book: Document
     {
-        public string author { get; private set; }
-        public int numberPage { get; private set; }
+        public string Author { get; private set; }
+        public int NumberPage { get; private set; }
         public Book(string iD, string nxB, int So, string author,int numberPage) : base(iD, nxB, So)
         {
-            this.author= author;
-            this.numberPage = numberPage;
+            this.Author= author;
+            this.NumberPage = numberPage;
         }
         //public override void Input()
         //{
@@ -30,7 +30,7 @@ namespace OOP2
         //}
         public override String ToString()
         {
-            return $"**ID: {ID} \n Nha xuat Ban: {publisher} \n So ban xuat ban: {numberPublish}\n Tac gia: {author}\n thang phat hanh: {numberPage}";
+            return $"**ID: {ID} \n Nha xuat Ban: {Publisher} \n So ban xuat ban: {NumberPublish}\n Tac gia: {Author}\n thang phat hanh: {NumberPage}";
         }
     }
 }

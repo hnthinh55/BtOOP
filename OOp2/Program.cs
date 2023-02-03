@@ -136,7 +136,7 @@ namespace OOP2
                         }
                     case 5:
                         {
-                            manage.EXIT();
+                            manage.LogOut();
                             break;
                         }
                 }

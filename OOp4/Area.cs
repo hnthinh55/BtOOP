@@ -9,24 +9,24 @@ namespace OOP4
 {
     internal class Area : IEnumerable<Family>
     {
-        public List<Family> hogiadinhs;
+        public List<Family> families;
         public Area() {
-            hogiadinhs = new List<Family>();
+            families = new List<Family>();
         }
 
         public IEnumerator<Family> GetEnumerator()
         {
-            return ((IEnumerable<Family>)hogiadinhs).GetEnumerator();
+            return ((IEnumerable<Family>)families).GetEnumerator();
         }
 
-        public void addFamily(Family hoGiaDinh)
+        public void AddFamily(Family hoGiaDinh)
         {
-            hogiadinhs.Add(hoGiaDinh);
+            families.Add(hoGiaDinh);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable)hogiadinhs).GetEnumerator();
+            return ((IEnumerable)families).GetEnumerator();
         }
     }
 }

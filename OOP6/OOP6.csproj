@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E890D0A5-58FB-429D-BA0F-BEADE02B464D}</ProjectGuid>
+    <ProjectGuid>{147208C2-3906-4817-94F7-65E1D2701F87}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BtOOP</RootNamespace>
-    <AssemblyName>BtOOP</AssemblyName>
+    <RootNamespace>OOP6</RootNamespace>
+    <AssemblyName>OOP6</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engineer.cs" />
-    <Compile Include="Officer.cs" />
+    <Compile Include="ManageStudent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ManagerOfficer.cs" />
-    <Compile Include="Staff.cs" />
-    <Compile Include="Worker.cs" />
+    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

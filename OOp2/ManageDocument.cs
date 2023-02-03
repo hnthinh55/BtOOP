@@ -10,23 +10,23 @@ namespace OOP2
     internal class ManageDocument
     {
 
-        private IList<Document> manages;
+        private IList<Document> _manages;
         public ManageDocument()
         {
-            manages = new List<Document>();
+            _manages = new List<Document>();
         }
         public void AddDocument(Document manage)
         {
-            manages.Add(manage);
+            _manages.Add(manage);
         }
         public bool RemoveDocument(string id)
         {
-            var check = from list in manages
+            var check = from list in _manages
                         where list.ID== id
                         select list;
             if (check.Count() > 0)
             {
-                manages.Remove((from list in manages
+                _manages.Remove((from list in _manages
                                 where list.ID == id
                                 select list).FirstOrDefault());
                 return true;
@@ -38,19 +38,19 @@ namespace OOP2
             List<Document> manageDocuments= new List<Document>();
             if (tensearch == "Sach")
             {
-                manageDocuments = (from list in manages
+                manageDocuments = (from list in _manages
                         where list.GetType() == typeof(Book)
                         select list).ToList();
             }
             else if (tensearch == "TapChi")
             {
-                manageDocuments = (from list in manages
+                manageDocuments = (from list in _manages
                         where list.GetType() == typeof(Magazine)
                         select list).ToList();
             }
             else if (tensearch == "Bao")
             {
-                manageDocuments = (from list in manages
+                manageDocuments = (from list in _manages
                         where list.GetType() == typeof(Newspaper)
                         select list).ToList();
             }
@@ -61,12 +61,12 @@ namespace OOP2
         }
         public void ShowList()
         {
-            foreach (var item in manages)
+            foreach (var item in _manages)
             {
                 Console.WriteLine(item.ToString());
             }
         }
-        public void EXIT()
+        public void LogOut()
         {
             Environment.Exit(0);
         }
