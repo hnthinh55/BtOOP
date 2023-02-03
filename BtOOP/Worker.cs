@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BtOOP
+namespace OOP1
 {
     class Worker : Officer
     {

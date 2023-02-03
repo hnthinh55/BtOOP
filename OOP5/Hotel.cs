@@ -23,9 +23,7 @@ namespace OOP5
                         select list;
             if (check.Count() > 0)
             {
-                _customers.Remove((from list in _customers
-                                  where list.IdentifyCard == id
-                                   select list).FirstOrDefault());
+                _customers.Remove(check.FirstOrDefault());
                 return true;
             }
             return false;
