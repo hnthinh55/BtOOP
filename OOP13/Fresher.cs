@@ -31,5 +31,15 @@ namespace OOP13
             Type obj = typeof(Fresher);
             obj.GetProperty(field_name).SetValue(this, new_value);
         }
+        public override void InputInfo()
+        {
+            base.InputInfo();
+            Console.WriteLine("Enter GraduationDate:");
+            GraduationDate = Console.ReadLine();
+            Console.WriteLine("Enter GraduationRank");
+            GraduationRank = Console.ReadLine();
+            Console.WriteLine("Enter Education:");
+            Education = Console.ReadLine();
+        }
     }
 }

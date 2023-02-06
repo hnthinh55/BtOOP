@@ -28,5 +28,13 @@ namespace OOP13
             Type obj = typeof(Experience);
             obj.GetProperty(field_name).SetValue(this, new_value);
         }
+        public override void InputInfo()
+        {
+            base.InputInfo();
+            Console.WriteLine("Enter ExpInYear:");
+            ExpInYear = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter ProSkill");
+            ProSkill = Console.ReadLine();
+        }
     }
 }

@@ -20,5 +20,16 @@ namespace OOP13
             CertificateDate = certificateDate;
         }
         public Certificate() { }
+        public void InputCertificate()
+        {
+            Console.WriteLine("Enter certificate id:");
+            CertificateID = Console.ReadLine();
+            Console.WriteLine("Enter certificate Name:");
+            CertificateName = Console.ReadLine();
+            Console.WriteLine("Enter certificate rank:");
+            CertificateRank = Console.ReadLine();
+            Console.WriteLine("Enter certificate Date:");
+            CertificateDate = Console.ReadLine();
+        }
     }
 }

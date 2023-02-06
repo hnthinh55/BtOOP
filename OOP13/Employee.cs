@@ -1,7 +1,9 @@
-﻿using System;
+﻿using OOP13.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace OOP13
@@ -28,7 +30,31 @@ namespace OOP13
             this.certificates = certificates;
         }
         public Employee() { }
+        // Show informatiuon method
         public abstract void ShowInfo();
+        // Update Information of employee
         public abstract void UpdateInfo(string field_name, string new_value);
+        //Input information of Employee
+        public virtual void InputInfo()
+        {
+            
+            Console.WriteLine("Enter ID: "); //Enter Id
+            Id = Console.ReadLine();
+            Console.WriteLine("Enter fullname: "); //Enter Fullname
+            Name = Console.ReadLine();        
+            Console.WriteLine("Enter birthday: "); //Enter Day of birth 
+            BirthDay = Console.ReadLine();
+            Console.WriteLine("Enter phone: "); //Enter phone
+            Phone = Console.ReadLine();           
+            Console.WriteLine("Enter email: "); //Enter email
+            Email = Console.ReadLine();
+            Console.WriteLine("Enter number certificate employee have: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            certificates = new List<Certificate>();
+            for (int j = 0; j < number; j++)
+            {
+                certificates[j].InputCertificate();
+            }
+        }
     }
 }
