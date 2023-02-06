@@ -10,7 +10,7 @@ namespace OOP13.Exceptions
     {
         public PhoneException() { }
         public PhoneException(string phone)
-        : base(String.Format("Phone is wrong: {0}", phone))
+        : base(String.Format(phone))
         {
 
         }
