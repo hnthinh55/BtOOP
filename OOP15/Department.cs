@@ -125,6 +125,19 @@ namespace OOP15
                 }
             }
         }
+        //Count regular student in department
+        public int CountRegular()
+        {
+            int sumOfStudent = students.Count();
+            int regularStudents = 0;
+            foreach (var student in students)
+            {
+                if(student.GetType() != typeof(InServiceStudent))
+                    regularStudents++;
+            }
+            return regularStudents;
+
+        }
 
     }
 }

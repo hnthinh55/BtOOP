@@ -55,6 +55,7 @@ namespace OOP15
             //manage.HigestSemesterGPA();
             //manage.ListFilter();
             //manage.GroupYear();
+            manage.RegularStudents();
 
         }
         static void Main(string[] args)

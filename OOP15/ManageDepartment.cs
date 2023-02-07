@@ -112,6 +112,15 @@ namespace OOP15
                 Console.WriteLine(" ]");
             }
         }
+        //Count regular student in each department
+        public void RegularStudents()
+        {
+            Console.WriteLine("Regular student in each department");
+            foreach (var department in departments)
+            {
+                Console.Write($"  Department: {department.DepartName} have {department.CountRegular()} regular student");
+            }
+        }
 
     }
 }
