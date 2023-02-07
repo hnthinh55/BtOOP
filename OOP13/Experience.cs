@@ -35,6 +35,7 @@ namespace OOP13
             ExpInYear = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter ProSkill");
             ProSkill = Console.ReadLine();
+            EmployeeType = 0;
         }
     }
 }

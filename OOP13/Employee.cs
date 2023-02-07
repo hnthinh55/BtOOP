@@ -29,7 +29,10 @@ namespace OOP13
             EmployeeCount ++;
             this.certificates = certificates;
         }
-        public Employee() { }
+        public Employee() {
+            EmployeeCount++;
+            this.certificates = new List<Certificate>();
+        }
         // Show informatiuon method
         public abstract void ShowInfo();
         // Update Information of employee
@@ -50,10 +53,12 @@ namespace OOP13
             Email = Console.ReadLine();
             Console.WriteLine("Enter number certificate employee have: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            certificates = new List<Certificate>();
-            for (int j = 0; j < number; j++)
+            certificates = new List<Certificate>(number);
+            for (int j = 0; j < certificates.Count(); j++)
             {
-                certificates[j].InputCertificate();
+                Certificate certificate = new Certificate();
+                certificate.InputCertificate();
+                certificates.Add(certificate);
             }
         }
     }

@@ -9,6 +9,7 @@ using OOP13.Exceptions;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using System.Globalization;
 
 namespace OOP13
 {
@@ -56,7 +57,22 @@ namespace OOP13
             }
             else
             {
-                throw new PhoneException("Email can not empty");
+                throw new EmailException("Email can not empty");
+            }
+        }
+        //Check day of birth
+        private static void CheckBirthDay(string birthday)
+        {
+            if (!String.IsNullOrEmpty(birthday))
+            {
+                DateTime dt;
+                bool checkDay= DateTime.TryParseExact(birthday,"dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt) ;
+                if (checkDay != true)
+                    throw new BithdayException(@"Not correct format (dd/MM/yyyy)");
+            }
+            else
+            {
+                throw new BithdayException("BirthDay can not empty");
             }
         }
         //Check Information exception  
@@ -65,6 +81,7 @@ namespace OOP13
             CheckName(employee.Name);
             CheckPhone(employee.Phone);
             CheckEmail(employee.Email);
+            CheckBirthDay(employee.BirthDay);
         }
         //Add employees
         public static void AddEmployees(ManageEmployees manage)
@@ -189,7 +206,7 @@ namespace OOP13
         static void Main(string[] args)
         {
             ManageEmployees manage = new ManageEmployees();
-            RunProject(manage);
+            RunProject( manage);
             Console.ReadLine();
         }
     }

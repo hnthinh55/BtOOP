@@ -40,6 +40,7 @@ namespace OOP13
             GraduationRank = Console.ReadLine();
             Console.WriteLine("Enter Education:");
             Education = Console.ReadLine();
+            EmployeeType = 1;
         }
     }
 }

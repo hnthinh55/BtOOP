@@ -42,6 +42,7 @@ namespace OOP13
             Semester = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter UniversityName:");
             UniversityName = Console.ReadLine();
+            EmployeeType = 2;
         }
     }
 }
